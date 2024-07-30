@@ -1,0 +1,4 @@
+Started out as two player survival game when one player must survive longer than the other
+Quickly became popular as a single player game when it was put in the nokia phones
+Gameplay and mechanics are simple you must avoid hitting any obstacle and yourself
+and must collect as many point/food items in a given level which sets up your score
