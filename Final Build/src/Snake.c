@@ -250,14 +250,12 @@ void Snake_collision(int PLAY_WIDTH, int PLAY_HEIGHT)
 	// now to check if the snake has collided with the screen walls or not
 	if( ( ((SnakeNode*)DList_first(Snake))->body.x < 0 + SNAKE_WIDTH ) || ( ((SnakeNode*)DList_first(Snake))->body.x > PLAY_WIDTH ))
 	{
-		printf("Collision on x-axis!\n");
 		SNAKE_COLLIDED = true;
 		return;
 	}
 		
 	if( ( ((SnakeNode*)DList_first(Snake))->body.y < 0 + SNAKE_HEIGHT ) || ( ((SnakeNode*)DList_first(Snake))->body.y > PLAY_HEIGHT ))
 	{
-		printf("Collision on y-axis\n");
 		SNAKE_COLLIDED = true;
 		return;
 	}
@@ -267,7 +265,6 @@ void Snake_collision(int PLAY_WIDTH, int PLAY_HEIGHT)
 	// therefore we will start the loop from the second node
 	DList_FOREACH(Snake, first->next, next, cur){
 		if(Snake_checkCollision( &((SnakeNode*)DList_first(Snake))->collider, &((SnakeNode*)cur->value)->collider)){
-			printf("Collision with itself!!\n");
 			SNAKE_COLLIDED = true;
 			return;
 		}

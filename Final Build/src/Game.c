@@ -249,8 +249,6 @@ void update()
 	
 	// Check if the snake has collided
 	if(SNAKE_COLLIDED){
-		// Then stop the snake somehow
-		printf("Stop the Snake!\n");
 		// Update the message on the screen
 		Texture_loadFromRenderedText(renderer, &MESSAGE_1, font, "GAME OVER!", text_color);
 		Texture_loadFromRenderedText(renderer, &MESSAGE_2, font, "PRESS SPACE TO RESTART", text_color);
@@ -369,7 +367,6 @@ void close()
 // Point generation function
 SDL_Point* generateRandomPoint()
 {
-	
 	// Variables for storing the coordinates of the food
 	int x = 0;
 	int y = 0;
@@ -394,7 +391,6 @@ SDL_Point* generateRandomPoint()
 		// check if the collider collides against any of the body of the snake
 		DList_FOREACH(Snake, first, next, cur){
 			if(checkCollision(&collider, &((SnakeNode*)cur->value)->collider)){
-				printf("Collision with the new point!\n");
 				point_found = false;
 			}
 			// also it shouldn't collide with any of the walls
@@ -405,7 +401,6 @@ SDL_Point* generateRandomPoint()
 		}
 		
 		if(point_found){
-			printf("New Point found!\n");
 			break;
 		}
 	}
@@ -439,7 +434,6 @@ SDL_Point* generateRandomPoint()
 		}
 	}
 	
-	printf("Food position: %d, %d\n",x ,y);
 	// Copying the data to the point
 	SDL_Point* new_point = (SDL_Point*)malloc(sizeof(SDL_Point));
 	check(new_point != NULL, "Failed to create a point!");
