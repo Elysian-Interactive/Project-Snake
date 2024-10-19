@@ -1,5 +1,4 @@
 #include <Game.h>
-#include <UI.h>
 #include <Dot.h>
 #include <Snake.h>
 #include <Timer.h>
@@ -53,7 +52,7 @@ Texture MAX;
 // These ones are updated whenever snake eats the food
 Texture CURRENT_SCORE;
 Texture MAX_SCORE;
-// Changes depending on the 
+// Changes depending on the context of the game
 Texture MESSAGE_1;
 Texture MESSAGE_2;
 int current_score = 0;
@@ -91,6 +90,7 @@ error:
 // Function definitions
 bool init()
 {
+	// Initialization
 	check(SDL_Init(SDL_INIT_EVERYTHING) >= 0, "Failed to initialize SDL! SDL_Error: %s", SDL_GetError());
 	check((IMG_Init(IMG_INIT_PNG) & IMG_INIT_PNG) > 0, "Failed to initialize SDL_image! IMG_Error: %s", IMG_GetError());
 	check(TTF_Init() != -1, "Failed to intialzie SDL_ttf! TTF_Error: %s", TTF_GetError()); 
